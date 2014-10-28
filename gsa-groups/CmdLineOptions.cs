@@ -18,15 +18,7 @@ namespace gsa_groups
             CommitVerb = new ShowGroupsSubOptions();
         }
 
-        [HelpOption]
-        public string GetUsage()
-        {
-            string helpText = "This tool parses the onboard xml groups file and shows all groups for specific user.";
 
-            //return helpText + Environment.NewLine + Environment.NewLine + 
-            return HelpText.AutoBuild(this,
-              (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
-        }
     }
 
     public class ShowGroupsSubOptions
