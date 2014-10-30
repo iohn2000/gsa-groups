@@ -39,6 +39,13 @@ namespace gsa_groups
                 Environment.Exit(-1);
             }
             
+            if (! worked | invokedVerbInstance == null) // try without verb and assume "showgroups" is default
+            {
+                invokedVerb = "showgroups";
+                worked = CommandLine.Parser.Default.ParseArguments(args,og);
+                invokedVerbInstance = og;
+            }
+
             if (invokedVerb == "showgroups")
             {
                 og = (ShowGroupsSubOptions)invokedVerbInstance;
